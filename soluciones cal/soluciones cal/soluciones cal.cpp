@@ -3,10 +3,10 @@
 using namespace std;
 //Declaramos prototipos de funciones
 void menu();
-int suma();
-int resta();
-int multiplicacion();
-int divicion();
+long int suma();
+long int resta();
+long int multiplicacion();
+long float divicion();
 void pausa();
 
 int main()
@@ -25,13 +25,14 @@ void menu()
 	{
 		system("cls");
 		cin.clear();
-		cout << "calculadora de funciones \n";
-		cout << "--------------------------\n";
+		cout << "---------------------------------------------------------------------------------------------------------------------\n";
+		cout << "                                          calculadora de funciones \n";
+		cout << "---------------------------------------------------------------------------------------------------------------------\n";
 		cout << "\t1.-Sumar\n";
-		cout << "\t2.-Resta\n";
-		cout << "\t3.-Multiplicacion\n";
-		cout << "\t4.-Divicion\n";
-		cout << "\t5.-Salir\n";
+		cout << "\t2.-Restar\n";
+		cout << "\t3.-Multiplicar\n";
+		cout << "\t4.-Dividir\n";
+		cout << "\t5.-Salir\n\n";
 		cout << "Elige una opcion: \n";
 		cin >> tecla;
 		switch (tecla)
@@ -39,22 +40,18 @@ void menu()
 		case'1':
 			system("cls");
 			suma();
-			pausa();
 			break;
 		case'2':
 			system("cls");
 			resta();
-			pausa();
 			break;
 		case'3':
 			system("cls");
 			multiplicacion();
-			pausa();
 			break;
 		case'4':
 			system("cls");
 			divicion();
-			pausa();
 			break;
 		case'5':
 			system("cls");
@@ -62,32 +59,64 @@ void menu()
 			break;
 		default:
 			system("cls");
-			cout << "opcion no valida  \n";
+			cout << "Opcion no valida ingresa una de las 5 opciones disponibles\n";
 			pausa();
 			break;
 		}
 	} while (bandera != true);
 }
-int suma()
+long int suma()
 {
-
+	long int a, b, suma;
+	cout << "Dame el primer valor: \n";
+	cin >> a;
+	cout << "Dame el segundo valor: \n";
+	cin >> b;
+	suma = a + b;
+	cout << "El resultado de la suma es: " << suma << endl;
+	pausa();
+	return 0;
 }
-int resta()
+long int resta()
 {
-
+	long int a, b, resta;
+	cout << "Dame el primer valor: \n";
+	cin >> a;
+	cout << "Dame el segundo valor: \n";
+	cin >> b;
+	resta = a - b;
+	cout << "El resultado de la resta es: " << resta << endl;
+	pausa();
+	return 0;
 }
-int multiplicacion()
+long int multiplicacion()
 {
-
+	long int a, b, multiplicacion;
+	cout << "Dame el primer valor: \n";
+	cin >> a;
+	cout << "Dame el segundo valor: \n";
+	cin >> b;
+	multiplicacion = a * b;
+	cout << "El resultado de la multiplicacion es: " << multiplicacion << endl;
+	pausa();
+	return 0;
 }
-int divicion()
+long float divicion()
 {
-
+	long float a, b, divicion;
+	cout << "Dame el primer valor: \n";
+	cin >> a;
+	cout << "Dame el segundo valor: \n";
+	cin >> b;
+	divicion = a/ b;
+	cout << "El resultado de la divicion es: " << divicion << endl;
+	pausa();
+	return 0;
 
 }
 void pausa()
 {
-	cout << "Pulsa una tecla para continuar................";
+	cout << endl << "Pulsa una tecla para continuar................";
 	getwchar();
 	getwchar();
 }
